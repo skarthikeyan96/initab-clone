@@ -37,20 +37,20 @@ function Sidebar() {
       <br />
 
       <div className="container" id="bottom">
-        <div className="row">
+        
           <img
             src="https://initab.com/assets/images/initab_logo.png"
             className="img img-responsive"
             id="logo"
             alt="logo"
           />
-        </div>
-
-        <div className="row">
-          <button className="btn btn-primary" id="facebook">
+        
+		<br/>
+        
+          <a className="btn btn-primary" id="github"  href="https://github.com/skarthikeyan96">
             {" "}
-            <i className="fa fa-facebook" />
-          </button>
+            <i className="fa fa-github" />
+          </a>
           <button className="btn btn-primary" id="twitter">
             {" "}
             <i className="fa fa-twitter" />
@@ -63,7 +63,7 @@ function Sidebar() {
             {" "}
             <i className="fa fa-reddit" />
           </button>
-        </div>
+        
       </div>
       <br />
     </div>

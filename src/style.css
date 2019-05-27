@@ -66,6 +66,7 @@ div#sidebar {
   color: white;
   border-radius: 0%;
   padding: 0px;
+  height:100%;
   /* display: flex;
   flex-direction: column;
   height: 100%; */
@@ -74,12 +75,15 @@ img#logo {
   padding: 12px;
 }
 
-#facebook {
-  background: #3b5998;
+
+
+#github {
+  background: #fff;
   color: white;
   border: none;
   border-radius: 50px;
   margin: 5px;
+  cursor:pointer;
 }
 
 #twitter {
@@ -149,9 +153,11 @@ body {
 }
 
 #red::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: none;
+  outline: none;
 }
+
+
 #github-hist {
   padding: 0px;
 }
@@ -161,4 +167,52 @@ p#tabs {
 div#bottom {
     margin-top: 318px;
     padding: 0px;
+}
+
+#js_hist{
+	overflow-y:auto;
+	height:450px;
+}
+#js_hist::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+#js_hist::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#js_hist::-webkit-scrollbar-thumb {
+  /*
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  */
+  
+  background-color: none;
+  outline: none;
+  
+}
+#github-hist{
+	overflow-y:auto;
+	height:75%;
+}
+#github-hist::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+#github-hist::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#github-hist::-webkit-scrollbar-thumb {
+  /*
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  */
+  
+  background-color: none;
+  outline: none;
+  
+}
+#hide-text{
+	color: #6272a4;
 }

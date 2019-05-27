@@ -3,8 +3,18 @@ import ReactDOM from "react-dom";
 import "./bootstrap.css";
 import "./style.css";
 import Clock from "./clock";
-function History() {
-  let js_history = [
+
+class History extends React.Component{
+	 constructor(props) 
+    { 
+        super(props); 
+        this.state = { hideText : false }; 
+    } 
+	
+	handleClick = (e)=>{
+		this.setState({hideText:true})
+	}
+	js_history = [
     {
       hist_desc: "JavaScript Date Objects",
       duration: "17 hours ago",
@@ -31,25 +41,52 @@ function History() {
     },
     {
       hist_desc: "JavaScript Array filter() Method",
-      duration: "a day ago",
+      duration: "2 days ago",
       logo:
         "https://www.google.com/s2/favicons?domain=https://www.w3schools.com/js/js_dates.asp"
     },
     {
       hist_desc: "JavaScript Array reduce() Method",
-      duration: "a day ago",
+      duration: "2 days ago",
       logo:
         "https://www.google.com/s2/favicons?domain=https://www.w3schools.com/js/js_dates.asp"
+    },
+	{
+      hist_desc: "JavaScript - Optimizing a two array.map loop - Code Review Stack Exchange...",
+      duration: "2 days ago",
+      logo:"https://www.google.com/s2/favicons?domain=https://codereview.stackexchange.com/questions/184952/javascript-optimizing-a-two-array-map-loop"
+        
+    },
+	{
+      hist_desc: "Function.arguments - JavaScript | MDN",
+      duration: "2 days ago",
+      logo:
+        "https://www.google.com/s2/favicons?domain=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+    },
+	{
+      hist_desc: "Arguments Object JavaScript | MDN",
+      duration: "2 days ago",
+      logo:
+        "https://www.google.com/s2/favicons?domain=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
+    },
+	{
+      hist_desc: "Array.prototype.map | MDN",
+      duration: "2 days ago",
+      logo:
+        "https://www.google.com/s2/favicons?domain=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"
     }
   ];
-  return (
-    <div className="container">
+	render(){
+		var hidden = {
+			display: this.state.hideText===true ? "none" : "block"
+		}
+		return(<div className="container">
       <div id="js_hist">
         <div id="heading">
           <p id="text" className="text-center">
             RELEVANT JAVASCRIPT HISTORY
           </p>
-          {js_history.map((value, index) => {
+          {this.js_history.map((value, index) => {
             return (
               <div className="row" id="hist" key={index}>
                 <div className="col-9">
@@ -69,7 +106,6 @@ function History() {
         </div>
       </div>
 
-      <hr />
 
       {/* Clock component  */}
 
@@ -82,7 +118,10 @@ function History() {
         {" "}
         {new Date().toDateString()}{" "}
       </h4>
-      <p className="text-center" style={{ color: "#6272a4" }}>
+	  {
+		  
+	  }
+      <p className="text-center" style={hidden} id="hide-text">
         <span aria-hidden="true" class="fa fa-question-circle orangeCol" /> Did
         you know you can add CUSTOM LINKS to display in this section? Open the
         SETTINGS panel and add the URLs of your favorites sites to the 'CUSTOM
@@ -91,11 +130,11 @@ function History() {
         <span className="orangeCol">
           {" "}
           Got it don't show me this again{" "}
-          <i className="fa fa-times orangeCol" />
+          <i className="fa fa-times orangeCol" id="close-btn" onClick={this.handleClick} />
         </span>
       </p>
-    </div>
-  );
+    </div>);
+	}
 }
 
 export default History;
